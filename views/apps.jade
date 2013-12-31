@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    h1 Apps
+    p This page lists the apps installed on this server. If you wait a moment, we'll get their README's up!
+    - for (key in files)
+        h2= files[key]
+        p.load(data-file="/app/#{files[key]}/README.md")
+
+block scripts
+    script(type="text/javascript", src="/__marked_script")
+    script(type="text/javascript").
+        $('.load').each(function() {
+            var self = this;
+            $.get($(this).data('file'), function(data) {
+                $(self).html(data);
+            });
+        });

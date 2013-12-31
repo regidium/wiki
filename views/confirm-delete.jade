@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    h1 Confirm?
+    p Are you sure you wish to delete this file? We cannot recover it once it has been deleted from the server
+    p
+        img(src="/img/#{image}")
+    p
+        a(href="?file=#{image}&sure=true") Yes

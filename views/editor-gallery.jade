@@ -1,0 +1,11 @@
+div.gallery
+    - for (image in files)
+        div.item
+            img(src="/img/#{image}")
+            a.delete.linkPage(data-page="#{image}" href="#") Use
+
+script(type="text/javascript").
+    $('.linkPage').click(function() {
+        hideLB();
+        insertText("![Title]("+ $(this).data("page") +")");
+    });

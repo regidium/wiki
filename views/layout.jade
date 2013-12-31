@@ -1,0 +1,50 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        title RegidiumWiki
+        link(rel="icon", type="image/ico", href="/favicon.ico")
+        link(rel="stylesheet", href="/css/main.css")
+    body
+        div.header
+            div.content
+                span.right
+                    a.more(href="#", title="More") ...
+                a.home(href="/")
+                    svg#Layer_1(version="1.1", xmlns="http://www.w3.org/2000/svg", xmlns:xlink="http://www.w3.org/1999/xlink", x="0px", y="0px", width="22px", height="22px", viewBox="0 0 100 84", enable-background="new 0 0 100 84", xml:space="preserve")
+                        polygon(fill="#FFF", points="82,32.641 82,9 68,9 68,18.359 50,0 0,51 12,51 12,84 43,84 43,57 57,57 57,84 88,84 88,51 100,51 ")
+                block toolbar
+        div.moreBox.hide
+            div.content
+                a(href="/__gallery") Image Gallery
+                a(href="/__pages") Page List
+                a(href="/__apps") App List
+                a(href="/__about") About
+            div.clear
+        canvas(id="outline", width="100", height="400")
+        div.content.real
+            block content
+        script(type="text/javascript").
+            var root = "/";
+            var page = "#{wikipage}";
+        script(type="text/javascript", src="/js/jquery.min.js")
+
+        <!-- Outline -->
+        script(type="text/javascript", src="/js/modernizr.min.js")
+        script(type="text/javascript", src="/js/fracs.js")
+        script(type="text/javascript", src="/js/jquery.outline.js")
+
+        <!-- Editor -->
+        script(type="text/javascript", src="/js/jquery.autogrow-textarea.js")
+        script(type="text/javascript", src="/js/jquery.filedrop.js")
+        script(type="text/javascript", src="/js/codemirror/codemirror.js")
+        script(type="text/javascript", src="/js/codemirror/markdown.js")
+
+        <!-- Global -->
+        script(type="text/javascript", src="/js/page.js")
+
+        block scripts
+        div.lbB
+        div.lbC
+            button.closeButton.right x
+                div.c

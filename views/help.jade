@@ -1,0 +1,57 @@
+extends layout
+
+block content
+    h1 Help
+    p TinyWiki should work straight off without an issue, but if you're stuck, here's some pointers
+    p
+        a(href="/__syntax") We use Markdown. Here's the syntax
+    h3 Limiations of this system
+    p It's file based. No users
+    p You cannot have 
+        strong any 
+        | pages named as follows
+    ul
+        li app
+        li design
+        li images
+        li Anything beginning with __
+    p While nothing will break, you will only be able to edit and never ever view these pages
+    p Sorry :(
+    h3 Apps
+    p We have apps
+    p This means nice apps which use TinyWiki's infrastructure to work properly
+    p We've got a couple
+    p Try making a new page with the text 
+        code [app todo] 
+        | and view it
+    p Apps pre-installed:
+    ul
+        li todo - a todo.txt editor
+        li bookmarks - a simple bookmarks tool
+    h4 I want to make one
+    p Awesome. Just add 
+        code yourappname.js 
+        | to the lib/app folder
+    p Then add a page with 
+        code [app yourappname]
+    p Then write your JS file. We have jQuery already loaded (no UI)
+    p Some things to note though:
+    ul
+        li
+            code #appData 
+            | contains the file contents of the file you wrote. Store your data here
+        li
+            code #appArea 
+            | is where you should store the DOM to your app (not required, but it's for neatness)
+        li When you have updated 
+            code #appData 
+            | with the file to replace, call 
+            code saveContents() 
+            | and the system will manage it all
+        li If you want your app to continue showing, the first line must 
+            strong always 
+            | be the [app yourappname] def
+        li Want a lightbox? We have one 
+            code showLB("html string here"); 
+            | and get rid of it with 
+            code hideLB();

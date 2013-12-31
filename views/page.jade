@@ -1,0 +1,14 @@
+extends layout
+
+block toolbar
+    - var current = 'view'
+    include page-toolbar
+block content
+    div.details Reading time
+        abbr(title="at 200 words per minute") ~
+        | #{time} minutes. #{words} words.
+
+    - if (get && get.saved == 'true')
+        div.message Page was saved
+
+    | !{contents}

@@ -1,0 +1,12 @@
+h3 Insert Link to Page
+ul
+    - for (page in files)
+       li
+            a.linkPage(href="#", data-page="#{page}")
+                | #{page}
+
+script(type="text/javascript").
+    $('.linkPage').click(function(){
+        hideLB();
+        insertText("[Link Title]("+ $(this).data("page") +")");
+    });

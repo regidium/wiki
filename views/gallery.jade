@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    h1 Gallery
+    - if (get && get.deleted == true)
+        div.message Image was deleted
+    div.gallery
+        - for(image in files)
+            div.item
+                img(src="/img/#{image}")
+                a.delete(href="/__gallery_delete?file=#{image}") DELETE

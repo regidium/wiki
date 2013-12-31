@@ -1,0 +1,31 @@
+extends layout
+
+block toolbar
+    - var current = 'editor'
+    include page-toolbar
+
+block content
+    h1 Edit Page #{wikipage}
+    form(method="post", action="/edit/#{wikipage}#preview")
+        div.previewBox
+        textarea#theEditor.markitup(name="contents") !{contents}
+        div.clear
+
+        div.controls
+            div.content
+                span.right
+                    span#load uploading...
+                    button#image upload image
+                    button#existImage gallery
+                    button#link link
+                input(type="submit", name="action", value="save")
+                input(type="submit", name="action", value="preview")
+
+    input#uploadfile(type="file")
+    - if (preview)
+        a#preview
+        h3 Preview
+        div#preview #{preview}
+    br
+    br
+    br

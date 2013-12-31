@@ -1,0 +1,12 @@
+extends layout
+
+block toolbar
+    - var current = 'view'
+    include page-toolbar
+    a#appSaveStatus(href="#", title="Save status") ok
+block content
+    textarea#appData.hide
+        | !{contents}
+    div#appArea
+block scripts
+    script(type="text/javascript" src="/js/#{appname}/#{appname}.js")
