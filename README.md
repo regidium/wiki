@@ -1,2 +1,2 @@
-Regidium wiki
+Regidium Wiki
 ==========================

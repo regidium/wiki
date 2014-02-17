@@ -31,8 +31,7 @@ app.configure('production', function(){
 for(method in wiki){
     if(method != 'page' && method != 'editor') {
         console.log('Adding endpoint ' + method);
-        app.get('/' + method, wiki[method]);
-        app.post('/' +method, wiki[method]);
+        app.all('/' + method, wiki[method]);
     }
 }
 
